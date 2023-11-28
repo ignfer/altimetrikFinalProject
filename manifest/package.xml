@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
+        <members>ucl_NightlyService</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
         <members>ucl_Client__c.Addres__c</members>
         <members>ucl_Client__c.Client_Number__c</members>
         <members>ucl_Client__c.Email__c</members>

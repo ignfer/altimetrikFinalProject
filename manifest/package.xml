@@ -41,25 +41,10 @@
         <members>ucl_Legal_Advisor__c</members>
         <name>CustomObject</name>
     </types>
-    <types>
-        <members>Account_Name__c</members>
-        <members>Account_Status__c</members>
-        <members>As_of_Date__c</members>
-        <name>CustomField</name>
-    </types>
 
     <types>
         <members>ucl_Client__c</members>
         <name>CustomObject</name>
-    </types>
-    <types>
-        <members>Addres__c</members>
-        <members>Client_Number__c</members>
-        <members>Email__c</members>
-        <members>First_Name__c</members>
-        <members>Last_Name__c</members>
-        <members>Phone__c</members>
-        <name>CustomField</name>
     </types>
 
     <version>59.0</version>

@@ -2,8 +2,8 @@
 insert the records into the database.
 the 'NightlyHerokuService' is just an Scheduled Apex class wich execute
 this callout every night.*/
-public class ucl_HerokuService {
-    
+public with sharing class ucl_HerokuService {
+    @AuraEnabled
     public static void doGet(){
         Http http = new Http();
         HttpRequest request = new HttpRequest();

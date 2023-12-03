@@ -10,7 +10,6 @@ public class ucl_ResponseValidationHandler {
      * wouldn't end in the database annyways 
 	*/
     public static List<ucl_LegalAdvisorHandler> getValidAdvisors(List<ucl_LegalAdvisorHandler> legalAdvisors){
-        try{
             List<ucl_LegalAdvisorHandler> validAdvisors = new List<ucl_LegalAdvisorHandler>();
             //advisors accounts already in salesforce with the enabled status, used in the isEnabled validation
             Map<String,String> enabledAccountNumbers = new Map<String,String>();
@@ -25,10 +24,6 @@ public class ucl_ResponseValidationHandler {
                 }
             }
             return validAdvisors;
-        } catch (Exception e){
-            ucl_LogHandler.saveLog('Something went wrong validating the data', e.getMessage(), 'ucl_ResponseValidationHandler');
-            throw e;
-        }
     }
     
     /*
@@ -36,17 +31,12 @@ public class ucl_ResponseValidationHandler {
      * in the database 
 	*/
     public static Boolean isEnabled(ucl_LegalAdvisorHandler advisor,Map<String,String> enabledAccountNumbers){
-        try{
-            if (advisor.AccountStatus == 'Enabled' || 
-                advisor.AccountStatus == 'Disabled' && enabledAccountNumbers.containsKey(advisor.AccountNumber)){
+        if (advisor.AccountStatus == 'Enabled' || 
+            advisor.AccountStatus == 'Disabled' && enabledAccountNumbers.containsKey(advisor.AccountNumber)){
                 return true;
             }else{
                 return false;
             }
-        } catch (Exception e) {
-            ucl_LogHandler.saveLog('Something went wrong validating if a advisor is enabled', e.getMessage(), 'ucl_ResponseValidationHandler');
-            throw e;
-        }
     }
     
     /*
@@ -56,7 +46,6 @@ public class ucl_ResponseValidationHandler {
      * saved up for later deletion
 	*/
     public static List<ucl_Client__c> getCustomClientsToDelete(List<ucl_Client__c> clients){
-        try{
             List<ucl_Client__c> customClientsToDelete = new List<ucl_Client__c>();
             //clients already loaded in salesforce
             List<ucl_Client__c> alreadyExistentClients = [SELECT Id,Client_Number__c FROM ucl_Client__c WHERE Created_By_Admin__c = False];
@@ -73,10 +62,6 @@ public class ucl_ResponseValidationHandler {
             }
             
             return customClientsToDelete;
-        } catch (Exception e) {
-            ucl_LogHandler.saveLog('Something went wrong validating if a client needs to be deleted', e.getMessage(), 'ucl_ResponseValidationHandler');
-            throw e;
-        }
     }
 
 }

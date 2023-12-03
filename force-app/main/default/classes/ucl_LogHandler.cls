@@ -12,7 +12,7 @@ public with sharing class ucl_LogHandler {
         insert logToSave;
     }
     
-    public void checkAndDeleteOldLogs(){
+    public static void checkAndDeleteOldLogs(){
         DateTime currentDate = System.now();
 		DateTime oneMonthAgo = currentDate.addMonths(-1);
         

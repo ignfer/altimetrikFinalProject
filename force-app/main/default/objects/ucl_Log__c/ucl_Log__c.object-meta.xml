@@ -143,7 +143,6 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <description>The custom object for Legal Advisors</description>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
@@ -153,13 +152,14 @@
     <enableSearch>false</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>ReadWrite</externalSharingModel>
-    <label>Legal Advisor</label>
+    <externalSharingModel>Private</externalSharingModel>
+    <label>Log</label>
     <nameField>
-        <label>Account Name</label>
-        <type>Text</type>
+        <displayFormat>Log-{0000}</displayFormat>
+        <label>Log Name</label>
+        <type>AutoNumber</type>
     </nameField>
-    <pluralLabel>Legal Advisors</pluralLabel>
+    <pluralLabel>Logs</pluralLabel>
     <searchLayouts></searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>

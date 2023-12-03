@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>As_of_Date__c</fullName>
+    <fullName>Created_By_Admin__c</fullName>
+    <defaultValue>true</defaultValue>
     <externalId>false</externalId>
-    <label>As of Date</label>
-    <required>false</required>
+    <label>Created By Admin?</label>
+    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
-    <type>Date</type>
+    <type>Checkbox</type>
 </CustomField>

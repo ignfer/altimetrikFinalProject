@@ -4,6 +4,10 @@ and then insert them into the database*/
 public class ucl_NightlyHerokuService implements Schedulable {
     public Boolean simulateExceptionForTest{set; get;}
     
+    public ucl_NightlyHerokuService(){
+        this.simulateExceptionForTest = false;
+    }
+    
     public void execute(SchedulableContext ctx) {
         try{
             /*

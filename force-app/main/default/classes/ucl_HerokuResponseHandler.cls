@@ -85,8 +85,7 @@ public class ucl_HerokuResponseHandler {
             ucl_Legal_Advisor__c CustomLegalAdvisor = new ucl_Legal_Advisor__c(Name = advisorHandler.AccountName,
                                                                            Account_Number__c = advisorHandler.AccountNumber,
                                                                            Account_Status__c = advisorHandler.AccountStatus, 
-                                                                           As_of_Date__c = stringToDate(advisorHandler.AsOfDate),
-                                                                           Created_By_Admin__c = false);
+                                                                           As_of_Date__c = stringToDate(advisorHandler.AsOfDate));
             return CustomLegalAdvisor;
         } catch (Exception e) {
             ucl_LogHandler.saveLog('Something went wrong creating the advisor handler', e.getMessage(), 'ucl_HerokuResponseHandler');

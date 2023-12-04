@@ -1,40 +1,71 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>*</members>
+        <members>ucl_ClientHandler</members>
+        <members>ucl_ClientHandler_Test</members>
+        <members>ucl_HerokuResponseHandler</members>
+        <members>ucl_HerokuResponseHandler_Test</members>
+        <members>ucl_HerokuService</members>
+        <members>ucl_HerokuService_Test</members>
+        <members>ucl_LegalAdvisorHandler</members>
+        <members>ucl_LegalAdvisorHandler_Test</members>
+        <members>ucl_LogHandler</members>
+        <members>ucl_LogHandler_Test</members>
+        <members>ucl_NightlyHerokuService</members>
+        <members>ucl_NightlyHerokuService_Test</members>
+        <members>ucl_ResponseValidationHandler</members>
+        <members>ucl_ResponseValidationHandler_Test</members>
         <name>ApexClass</name>
     </types>
     <types>
-        <members>*</members>
-        <name>ApexComponent</name>
+        <members>ucl_Universal_Containers_Lawyers_app</members>
+        <name>CustomApplication</name>
     </types>
     <types>
-        <members>*</members>
-        <name>ApexPage</name>
+        <members>ucl_Client__c.Addres__c</members>
+        <members>ucl_Client__c.Asesored_By__c</members>
+        <members>ucl_Client__c.Client_Number__c</members>
+        <members>ucl_Client__c.Created_By_Admin__c</members>
+        <members>ucl_Client__c.Email__c</members>
+        <members>ucl_Client__c.First_Name__c</members>
+        <members>ucl_Client__c.Last_Name__c</members>
+        <members>ucl_Client__c.Phone__c</members>
+        <members>ucl_Legal_Advisor__c.Account_Name__c</members>
+        <members>ucl_Legal_Advisor__c.Account_Number__c</members>
+        <members>ucl_Legal_Advisor__c.Account_Status__c</members>
+        <members>ucl_Legal_Advisor__c.As_of_Date__c</members>
+        <members>ucl_Legal_Advisor__c.Total_Clients__c</members>
+        <members>ucl_Log__c.Description__c</members>
+        <members>ucl_Log__c.Location__c</members>
+        <members>ucl_Log__c.Message__c</members>
+        <members>ucl_Log__c.Time__c</members>
+        <name>CustomField</name>
     </types>
     <types>
-        <members>*</members>
-        <name>ApexTestSuite</name>
+        <members>ucl_Client__c</members>
+        <members>ucl_Legal_Advisor__c</members>
+        <members>ucl_Log__c</members>
+        <name>CustomObject</name>
     </types>
     <types>
-        <members>*</members>
-        <name>ApexTrigger</name>
+        <members>Logs_Service_Excecution</members>
+        <members>Universal_Containers_Lawyers_app_UtilityBar</members>
+        <members>ucl_Logs_and_Service_execution</members>
+        <name>FlexiPage</name>
     </types>
     <types>
-        <members>*</members>
-        <name>AuraDefinitionBundle</name>
+        <members>ucl_Legal_Advisor__c-Legal Advisor Layout</members>
+        <name>Layout</name>
     </types>
     <types>
-        <members>*</members>
+        <members>ucl_RunHerokuServiceManually</members>
         <name>LightningComponentBundle</name>
     </types>
     <types>
-        <members>*</members>
-        <name>StaticResource</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>CustomObject</name>
+        <members>ucl_Client__c.All</members>
+        <members>ucl_Legal_Advisor__c.All</members>
+        <members>ucl_Log__c.All</members>
+        <name>ListView</name>
     </types>
     <version>59.0</version>
 </Package>

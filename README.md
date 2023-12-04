@@ -1,18 +1,26 @@
-# Salesforce DX Project: Next Steps
+# Project description 🤔
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+Universal Containers Lawyers is a company that provides legal advisory to their customers.
+**They consume data from an external system that stores the information into Heroku on a daily
+basis.** They want to adopt Salesforce and need to migrate the information stored in Heroku into an org.
+**The data is retrieved as a JSON, and contains two types of entities: ‘Legal Advisor’, and ‘Client’.**
+There is a **web service in Heroku** that contains the json file. Also, given that this information
+changes periodically, they need a way to **do this process automatically every day.**
+Legal Advisors are firms that provide legal services to different clients. Clients are the ones that
+hire the advisors services.
 
-## How Do You Plan to Deploy Your Changes?
+---
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+# Features ☑️
+* Custom object for the Legal Advisor
+* Custom object for the Clients
+* Master-Detail relationship between Legal Advisor and his Clients
+* Error Handling and stored Logs
+* Nightly execution service
+* Email alerts if the nightly service execution fails
+* Lightning Web Componen to manually run the service
+* Custom UCL app
+* 75%+ code coverage
 
-## Configure Your Salesforce DX Project
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
 
-## Read All About It
-
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)

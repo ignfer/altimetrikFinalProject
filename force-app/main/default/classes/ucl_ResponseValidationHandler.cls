@@ -48,15 +48,15 @@ public class ucl_ResponseValidationHandler {
     public static List<ucl_Client__c> getCustomClientsToDelete(List<ucl_Client__c> clients){
             List<ucl_Client__c> customClientsToDelete = new List<ucl_Client__c>();
             //clients already loaded in salesforce
-            List<ucl_Client__c> alreadyExistentClients = [SELECT Id,Client_Number__c FROM ucl_Client__c WHERE Created_By_Admin__c = False];
+            List<ucl_Client__c> alreadyExistentClients = [SELECT Id,Client_Key__c FROM ucl_Client__c WHERE Created_By_Admin__c = False];
             
             Map<String,String> enteringClients = new Map<String,String>();
             for(ucl_Client__c client : clients){
-                enteringClients.put(client.Client_Number__c,client.Client_Number__c);
+                enteringClients.put(client.Client_Key__c,client.Client_Key__c);
             }
             
             for(ucl_Client__c client : alreadyExistentClients){
-                if(!enteringClients.containsKey(client.Client_Number__c)){
+                if(!enteringClients.containsKey(client.Client_Key__c)){
                     customClientsToDelete.add(client);
                 }
             }

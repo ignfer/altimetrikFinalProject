@@ -41,19 +41,19 @@ public class ucl_HerokuResponseHandler {
      * and saves them
 	*/
     public static List<ucl_Client__c> getClientsFromHandlers(List<ucl_LegalAdvisorHandler> JSONToHandlerResults){
-        List<ucl_Client__c> CustomObjectClientResults = new List<ucl_Client__c>();
+        List<ucl_Client__c> customObjectClientResults = new List<ucl_Client__c>();
         try {
             for (ucl_LegalAdvisorHandler advisorHandler : JSONToHandlerResults){
                 if(advisorHandler.Id != null){
-                    for(ucl_ClientHandler ClientHandler: advisorHandler.Clients){
-                        ucl_Client__c CustomObjectClient = createCustomClient(ClientHandler,advisorHandler.Id);
-                        CustomObjectClientResults.add(CustomObjectClient);    
+                    for(ucl_ClientHandler clientHandler: advisorHandler.Clients){
+                        ucl_Client__c customObjectClient = createCustomClient(clientHandler,advisorHandler);
+                        CustomObjectClientResults.add(customObjectClient);    
                     }
                 }
                 //break; //the purpose of this break is to just parse the first registry
             }
             
-            return CustomObjectClientResults;
+            return customObjectClientResults;
         } catch (Exception e) {
             ucl_LogHandler.saveLog('Something went wrong parsing the Heroku response into client handlers', e.getMessage(), 'ucl_HerokuResponseHandler');
             throw e;
@@ -96,18 +96,19 @@ public class ucl_HerokuResponseHandler {
     /*
      * an auxiliar method to create a client custom object from the client handler 
 	*/
-    public static ucl_Client__c createCustomClient(ucl_ClientHandler ClientHandler,Id LegalAdvisorId){
+    public static ucl_Client__c createCustomClient(ucl_ClientHandler clientHandler,ucl_LegalAdvisorHandler legalAdvisorHandler){
         try {
-            ucl_Client__c CustomObjectClient = new ucl_Client__c(Name=ClientHandler.FirstName + ClientHandler.LastName,
-                                                                 Client_Number__c = ClientHandler.ClientNumber,
-                                                                 First_Name__c = ClientHandler.FirstName,
-                                                                 Last_Name__c = ClientHandler.LastName,
-                                                                 Email__c = ClientHandler.Email,
-                                                                 Phone__c = ClientHandler.Phone,
-                                                                 Addres__c = ClientHandler.Address,
+            ucl_Client__c customObjectClient = new ucl_Client__c(Name=clientHandler.FirstName + clientHandler.LastName,
+                                                                 Client_Number__c = clientHandler.ClientNumber,
+                                                                 First_Name__c = clientHandler.FirstName,
+                                                                 Last_Name__c = clientHandler.LastName,
+                                                                 Email__c = clientHandler.Email,
+                                                                 Phone__c = clientHandler.Phone,
+                                                                 Addres__c = clientHandler.Address,
                                                              	 Created_By_Admin__c = false,
-                                                                 Asesored_By__c = LegalAdvisorId);
-        return CustomObjectClient;
+                                                                 Asesored_By__c = legalAdvisorHandler.Id,
+                                                                 Client_Key__c = legalAdvisorHandler.AccountNumber + clientHandler.ClientNumber);
+        return customObjectClient;
         } catch (Exception e ) {
             ucl_LogHandler.saveLog('Something went wrong creating the client handler', e.getMessage(), 'ucl_HerokuResponseHandler');
             throw e;

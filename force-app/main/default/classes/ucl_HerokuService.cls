@@ -19,7 +19,6 @@ public with sharing class ucl_HerokuService {
                 * get the JSON response from the Heroku endpoint and store it into a list of handlers, this let us get 
                 * the Legal Advisors and the Clients from the Handler avoiding deserializing the JSON response again
                 */
-                //response.getBody()
                 List<ucl_LegalAdvisorHandler> JSONToHandlerResults = ucl_HerokuResponseHandler.parseFromJSONtoHandler(response.getBody());
                 
                 /*
@@ -48,9 +47,9 @@ public with sharing class ucl_HerokuService {
                 }
                 
                 List<ucl_Client__c> customObjectClientResults = ucl_HerokuResponseHandler.getClientsFromHandlers(JSONToHandlerResults);
-                upsert customObjectLegalAdvisorsResults;
+                //upsert customObjectLegalAdvisorsResults;
                 try{
-                    Database.upsert(customObjectClientResults, ucl_Client__c.Client_Number__c, true);
+                    Database.upsert(customObjectClientResults, ucl_Client__c.Client_Key__c, true);
                     /*
                     * delete those clients who weren't in the JSON response and weren't created
                     * by an admin

@@ -1,3 +1,4 @@
+![Ignacio Fernandez logo](https://github.com/ignfer/altimetrikFinalProject/blob/main/IF_logo.png)
 # Project description 🤔
 
 Universal Containers Lawyers is a company that provides legal advisory to their customers.
